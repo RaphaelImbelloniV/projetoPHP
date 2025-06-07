@@ -18,6 +18,7 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
           sonar-scanner ^
+            C:\Users\moise\Downloads\sonar-scanner-7.1.0.4889-windows-x64\bin\sonar-scanner.bat
             -Dsonar.projectKey=projetoSonar-mantis ^
             -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
