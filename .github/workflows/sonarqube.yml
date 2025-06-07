@@ -23,9 +23,12 @@ jobs:
             -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
 
-      - name: Criar issues via PHP
+        name: Criar issues via PHP
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: php scripts/create_issues.php
+        shell: cmd
+        run: |
+          C:\php\php.exe scripts\create_issues.php
+
