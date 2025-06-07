@@ -3,7 +3,7 @@ name: SonarQube + Criar Issues
 on:
   push:
     branches:
-      - main
+      - master
 
 jobs:
   sonarqube-analysis:
