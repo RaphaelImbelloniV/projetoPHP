@@ -1,0 +1,6 @@
+projectKey=MES987654321
+serverUrl=http://localhost:9000
+serverVersion=8.9.10.61524
+dashboardUrl=http://localhost:9000/dashboard?id=MES987654321
+ceTaskId=AZbjpMW30Ss87P17Hhdd
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AZbjpMW30Ss87P17Hhdd
