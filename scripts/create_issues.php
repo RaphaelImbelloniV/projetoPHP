@@ -3,7 +3,7 @@ $sonarToken = getenv('SONAR_TOKEN');
 $githubToken = getenv('GH_PAT');
 $repo = getenv('GITHUB_REPOSITORY');
 
-$sonarUrl = 'http://localhost:9000/api/issues/search?projectKeys=MES987654321&types=BUG&statuses=OPEN';
+$sonarUrl = 'http://localhost:9000/api/issues/search?projectKeys=projetoSonar-mantis&types=BUG&statuses=OPEN';
 $context = stream_context_create([
     'http' => [
         'header' => "Authorization: Basic " . base64_encode("$sonarToken:")
