@@ -14,21 +14,19 @@ jobs:
         uses: actions/checkout@v3
 
       - name: Análise SonarQube
-        shell: cmd
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
         run: |
-          C:\Users\moise\Downloads\sonar-scanner-7.1.0.4889-windows-x64\bin\sonar-scanner.bat ^
+          sonar-scanner ^
+            C:\Users\moise\Downloads\sonar-scanner-7.1.0.4889-windows-x64\bin\sonar-scanner.bat
             -Dsonar.projectKey=projetoSonar-mantis ^
             -Dsonar.host.url=http://localhost:9000 ^
             -Dsonar.login=${{ secrets.SONAR_TOKEN }}
+          
 
-        name: Criar issues via PHP
+      - name: Criar issues via PHP
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        shell: cmd
-        run: |
-          C:\php\php.exe scripts\create_issues.php
-
+        run: C:\php\php.exe scripts/create_issues.php
