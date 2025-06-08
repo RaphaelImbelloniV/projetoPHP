@@ -28,4 +28,4 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
           GITHUB_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
-        run: php scripts/create_issues.php
+        run: C:\php\php.exe scripts/create_issues.php
