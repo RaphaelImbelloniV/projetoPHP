@@ -26,6 +26,6 @@ jobs:
       - name: Criar issues via PHP
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          GITHUB_PAT: ${{ secrets.GH_PAT }}
+          GH_PAT: ${{ secrets.GH_PAT }}
           GITHUB_REPOSITORY: ${{ github.repository }}
         run: C:\php\php.exe scripts/create_issues.php
