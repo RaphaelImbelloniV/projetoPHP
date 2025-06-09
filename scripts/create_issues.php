@@ -17,7 +17,7 @@ $issues = $data['issues'] ?? [];
 foreach ($issues as $bug) {
     $title = "SonarQube Bug: " . $bug['message'];
 
-    // Verifica se a issue já existe
+
     $checkUrl = "https://api.github.com/repos/$repo/issues";
     $opts = [
         "http" => [
@@ -39,7 +39,7 @@ foreach ($issues as $bug) {
     }
     if ($exists) continue;
 
-    // Cria nova issue
+
     $issue = [
         'title' => $title,
         'body' => "Arquivo: {$bug['component']}\nLinha: " . ($bug['line'] ?? 'N/A') . "\nDetalhes: {$bug['message']}\n\n[Ver no SonarQube](http://localhost:9000/code?id={$bug['component']}&open={$bug['key']})",
